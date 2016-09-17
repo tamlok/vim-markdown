@@ -81,7 +81,6 @@ I would use this section until I have a proper documentation
   * `let g:markdown_enable_insert_mode_mappings = 0` to disable insert mode mappings (enabled by default with: `1`)
   * `let g:markdown_enable_insert_mode_leader_mappings = 1` to enable insert mode leader mappings (disabled by default with: `0`)
 * `let g:markdown_enable_spell_checking = 0` to disable spell checking (enabled by default with: `1`)
-* `let g:markdown_enable_input_abbreviations = 0` to disable abbreviations for punctuations and emoticons (enabled by default with: `1`)
 * `let g:markdown_enable_conceal = 1` to enable conceal for italic, bold, inline-code and link (disabled by default with: `0`)
 
 ### Default Mappings (normal and visual mode)
@@ -141,10 +140,6 @@ Testing syntax highlight could be tricky, here I use the golden master patter to
 * Code Blocks
   * Edit jekyll front matter code block
   * Explain in this file why I chose to avoid to highlight nested block elements
-* Emoji (GFM)
-  * Start completion when hitting `:` in insert mode only if preceded by empty spaces or is the beginning of the line
-  * Remove duplication between syntax keywords and dictionary completion
-  * More `iabbr`
 * Lists
   * `i_<BS>` on a list item with no text in it (freshly created) it will delete everything till the column 0
   * `<C-K>` on a list item it will swap it with the item above (if it exists)

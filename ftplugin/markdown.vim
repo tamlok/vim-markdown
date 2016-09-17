@@ -45,7 +45,7 @@ if !exists('g:markdown_enable_spell_checking')
 endif
 
 if !exists('g:markdown_enable_input_abbreviations')
-  let g:markdown_enable_input_abbreviations = 1
+  let g:markdown_enable_input_abbreviations = 0
 endif
 
 " }}}
@@ -64,23 +64,6 @@ setlocal autoindent
 " Enable spelling and completion based on dictionary words
 if &spelllang !~# '^\s*$' && g:markdown_enable_spell_checking
   setlocal spell
-endif
-
-" Custom dictionary for emoji
-execute 'setlocal dictionary+=' . shellescape(expand('<sfile>:p:h:h')) . '/dict/emoticons.dict'
-setlocal iskeyword+=:,+,-
-setlocal complete+=k
-
-if g:markdown_enable_input_abbreviations
-  " Replace common ascii emoticons with supported emoji
-  iabbrev <buffer> :-) :smile:
-  iabbrev <buffer> :-D :laughing:
-  iabbrev <buffer> :-( :disappointed:
-
-  " Replace common punctuation
-  iabbrev <buffer> ... …
-  iabbrev <buffer> << «
-  iabbrev <buffer> >> »
 endif
 
 " Folding
