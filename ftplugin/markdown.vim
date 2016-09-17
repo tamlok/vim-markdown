@@ -156,23 +156,6 @@ if g:markdown_enable_mappings
       " Remove only empty list items when press <CR>
       inoremap <silent> <buffer> <script> <expr> <CR> <SID>IsAnEmptyListItem() ? '<C-O>:normal 0D<CR>' : '<CR>'
     endif
-
-    " Format tables
-    inoremap <silent> <buffer> <Bar> <Bar><Esc>:call markdown#FormatTable()<CR>a
-  endif
-
-  " Switch status of things
-  execute 'nnoremap <silent> <buffer> ' . g:markdown_mapping_switch_status . ' :call markdown#SwitchStatus()<CR>'
-
-  " Leader mappings
-  nnoremap <buffer> <Leader>e :MarkdownEditBlock<CR>
-  vnoremap <buffer> <Leader>e :MarkdownEditBlock<CR>
-  nnoremap <silent> <buffer> <Leader>ft  :call markdown#FormatTable()<CR>
-
-  " Insert Mode mappings
-  if g:markdown_enable_insert_mode_leader_mappings
-    inoremap <buffer> <Leader>e <Esc>:MarkdownEditBlock<CR>
-    inoremap <silent> <buffer> <Leader>ft  <Esc>:call markdown#FormatTable()<CR>a
   endif
 endif
 
